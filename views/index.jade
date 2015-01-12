@@ -1,8 +1,5 @@
 extends layout
 
-block scripts
-  script(src="/javascripts/photoManager.js")
-
 block images
   #welcomeFrame.imageFrame
     #welcomeContainerLeft.imageContainer.dualContainer
@@ -25,3 +22,6 @@ block content
           I am a software engineer that hails from Detroit, Michigan. A
           graduate of the Massachusetts Institute of Technology (Class of 2014), I
           am currently employed at General Motors Onstar as a software developer.
+
+block extraScripts
+  script(src="/javascripts/photoManager.js")
