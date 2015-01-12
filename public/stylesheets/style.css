@@ -1,0 +1,52 @@
+body{
+  padding-top: 50px;
+}
+
+.dualContainer{
+  max-width: 50%;
+  overflow: hidden;
+}
+
+.dualImage{
+  max-width: 100%;
+  overflow: hidden;
+}
+
+footer{
+  font-style: italic;
+  font-size: smaller;
+}
+
+.imageContainer{
+  max-height: inherit;
+  overflow: hidden;
+}
+
+.imageFrame{
+  width: 100%;
+  max-height: 55vh;
+  display: flex;
+  overflow: hidden;
+}
+
+nav ul li{
+  display: inline;
+}
+
+.quadContainer{
+  max-width: 25%;
+}
+
+.quadImage{
+  max-width: 100%;
+  overflow: hidden;
+}
+
+section {
+  font-family: 'Droid Sans', sans-serif;
+}
+
+#travelMap,#nudgeImage{
+  max-width: 100%;
+  overflow: hidden;
+}
