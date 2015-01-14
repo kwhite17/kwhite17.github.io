@@ -7,12 +7,12 @@ function loadImage(index,leftArray,rightArray){
 }
 
 var leftSources = ["/images/home/dormGradPhoto.jpg",
-"/images/home/nolaPhoto.jpg",
+"/images/home/tokyoSkytree.jpg",
 "/images/home/seniorBall.jpg"];
 
 var rightSources = ["/images/home/hibiyaPark.jpg",
 "/images/home/acfGradPhoto.jpg",
-"/images/home/tokyoSkytree.jpg"];
+"/images/home/nolaPhoto.jpg"];
 
 var counter = 0;
 // console.log("Setting Interval.....");
