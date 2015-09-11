@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var app = express();
-
+var port = process.env.PORT || 8080;
 app.use(express.static('public'));
 var resourcePath = '.';
 
@@ -29,9 +29,9 @@ app.get('/blogs', function(req, res) {
   res.sendFile('pages/blogs.html', {root: resourcePath});
 });
 
-var server = app.listen(3000, function() {
+var server = app.listen(port, function() {
   var host = server.address().address;
-  var port = server.address().port;
+  var finalPort = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('katanakdubs listening at http://%s:%s', host, finalPort);
 });
