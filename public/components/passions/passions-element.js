@@ -4,10 +4,10 @@ PassionsElement = Polymer({
   properties: {
     links: {
       type: Object,
-      value: {"iv": {"Home Page": "http://www.intervarsity.org/",
+      value: function() { return {"iv": {"Home Page": "http://www.intervarsity.org/",
       "Donate": "https://donate.intervarsity.org/donate" },
       "323": {"Home Page": "http://323fortheking.wix.com/323fortheking",
-      "Donate": "http://323fortheking.wix.com/323fortheking#!give/c125g"}}
+      "Donate": "http://323fortheking.wix.com/323fortheking#!give/c125g"}}; }
     }
   },
 

@@ -4,26 +4,24 @@ NavBar = Polymer({
   properties: {
     navOptions: {
       type: Object,
-      value: [{"pageName": "Home", "pageLink": "/"},
-                    {"pageName": "Projects", "pageLink": "/projects"},
-                    {"pageName": "Travel", "pageLink": "/travel"},
-                    {"pageName": "Passions", "pageLink": "/passions"},
-                    {"pageName": "Blogs", "pageLink": "/blogs"}]
+      value: function() { return {"Home": "/", "Projects": "/projects",
+       "Travel": "/travel","Passions": "/passions", "Blogs": "/blogs"}; }
     }
   },
 
   navigate(e) {
-    var model = e.model;
-    if (model !== undefined){
-      var item = model.item;
-      if (item !== undefined) {
-        window.location.href = item.pageLink;
-      }
+    var navPage = Polymer.dom(e.srcElement).textContent;
+    if (navPage !== undefined) {
+      window.location.href = this.navOptions[navPage];
     }
   },
 
   navigateHome(e) {
     window.location.href = "/";
+  },
+
+  getMenuItems(options) {
+    return Object.keys(options);
   }
 });
 

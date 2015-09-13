@@ -61,11 +61,9 @@
             <paper-item id="siteTitle" on-click="navigateHome">Kevin White</paper-item>
           </div>
         </paper-toolbar>
-        <paper-menu>
-          <template is="dom-repeat" items="{{navOptions}}">
-            <div>
-              <paper-item class="navLink" on-click="navigate">{{item.pageName}}</paper-item>
-            </div>
+        <paper-menu on-click="navigate">
+          <template is="dom-repeat" items="{{getMenuItems(navOptions)}}">
+              <paper-item class="navLink">{{item}}</paper-item>
           </template>
         </paper-menu>
       </paper-header-panel>

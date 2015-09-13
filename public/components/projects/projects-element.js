@@ -4,8 +4,8 @@ ProjectsElement = Polymer({
   properties: {
     links: {
       type: Object,
-      value: {"appLink": "https://play.google.com/store/apps/details?id=com.ksp.nudge",
-       "sourceLink": "https://github.com/kwhite17/Nudge"}
+      value: function() { return {"appLink": "https://play.google.com/store/apps/details?id=com.ksp.nudge",
+       "sourceLink": "https://github.com/kwhite17/Nudge"}; }
     }
   },
 
