@@ -4,20 +4,26 @@ NavBar = Polymer({
   properties: {
     navOptions: {
       type: Object,
-      value: function() { return {"Home": "/", "Projects": "/projects",
-       "Travel": "/travel","Passions": "/passions", "Blogs": "/blogs"}; }
+      value: function() { return {"Home": 0, "Projects": 1,
+       "Travel": 2,"Passions": 3, "Blogs": 4}; }
+    },
+
+    selected: {
+      type: Number,
+      value: 0
     }
   },
 
   navigate(e) {
     var navPage = Polymer.dom(e.srcElement).textContent;
     if (navPage !== undefined) {
-      window.location.href = this.navOptions[navPage];
+      this.$$('.pageTitle').innerHTML = navPage;
+      this.selected = this.navOptions[navPage];
     }
   },
 
   navigateHome(e) {
-    window.location.href = "/";
+    this.$$('#controller').selected = this.navOptions[navPage];
   },
 
   getMenuItems(options) {

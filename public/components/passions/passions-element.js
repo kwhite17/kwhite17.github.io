@@ -11,12 +11,6 @@ PassionsElement = Polymer({
     }
   },
 
-  attached: function() {
-    var nav = document.querySelector('nav-bar');
-    var title = nav.querySelector('.pageTitle');
-    title.innerHTML = "Passions";
-  },
-
   navigate(event) {
     var source = Polymer.dom(event).localTarget;
     var text = source.querySelector('paper-material').innerHTML.trim();

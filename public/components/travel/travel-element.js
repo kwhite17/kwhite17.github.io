@@ -9,12 +9,6 @@ TravelElement = Polymer({
     }
   },
 
-  attached: function() {
-    var nav = document.querySelector('nav-bar');
-    var title = nav.querySelector('.pageTitle');
-    title.innerHTML = "Travel";
-  },
-
   navigate(event) {
     var source = Polymer.dom(event).localTarget;
     window.location.href = this.links[source.getAttribute('name')];
