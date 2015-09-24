@@ -11,6 +11,7 @@
   <link rel="import" href="../../lib/paper-button/paper-button.html">
   <link rel="import" href="../../lib/neon-animation/neon-animated-pages.html">
   <link rel="import" href="../../lib/neon-animation/neon-animations.html">
+  <link rel="import" href="../../lib/flatiron-director/flatiron-director.html">
 
 
   <style is="custom-style">
@@ -56,16 +57,17 @@
   }
   </style>
   <template>
+    <flatiron-director route="{{route}}" auto-hash></flatiron-director>
     <paper-drawer-panel>
       <paper-header-panel drawer>
         <paper-toolbar>
           <div>
-            <paper-item id="siteTitle" on-click="navigateHome">Kevin White</paper-item>
+            <paper-item id="siteTitle">Kevin White</paper-item>
           </div>
         </paper-toolbar>
-        <paper-menu on-click="navigate">
-          <template is="dom-repeat" items="{{getMenuItems(navOptions)}}">
-              <paper-item class="navLink">{{item}}</paper-item>
+        <paper-menu attr-for-selected="hash" selected="{{route}}">
+          <template is="dom-repeat" items="{{navOptions}}">
+            <paper-item hash$="{{item}}" class="navLink">{{item}}</paper-item>
           </template>
         </paper-menu>
       </paper-header-panel>
@@ -76,8 +78,12 @@
             <span class="pageTitle">Home</span>
           </div>
         </paper-toolbar>
-        <neon-animated-pages id="controller" selected="[[selected]]" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
-          <content select=".component"></content>
+        <neon-animated-pages id="pages" attr-for-selected="anchor" selected="{{route}}" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
+          <home-element anchor="Home"></home-element>
+          <projects-element anchor="Projects"></projects-element>
+          <travel-element anchor="Travel"></travel-element>
+          <passions-element anchor="Passions"></passions-element>
+          <blogs-element anchor="Blogs"></blogs-element>
         </neon-animated-pages>
       </paper-header-panel>
     </paper-drawer-panel>

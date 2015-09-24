@@ -4,30 +4,27 @@ NavBar = Polymer({
   properties: {
     navOptions: {
       type: Object,
-      value: function() { return {"Home": 0, "Projects": 1,
-       "Travel": 2,"Passions": 3, "Blogs": 4}; }
+      value: function() { return ["Home", "Projects", "Travel",
+       "Passions", "Blogs"];}
     },
 
-    selected: {
-      type: Number,
-      value: 0
+    route: {
+      type: String,
+      observer: "_routeChanged"
     }
   },
 
-  navigate(e) {
-    var navPage = Polymer.dom(e.srcElement).textContent;
-    if (navPage !== undefined) {
-      this.$$('.pageTitle').innerHTML = navPage;
-      this.selected = this.navOptions[navPage];
-    }
+  attached: function() {
+    this.route = this.route ? this.route : "Home";
   },
 
-  navigateHome(e) {
-    this.$$('#controller').selected = this.navOptions[navPage];
+  _routeChanged(newValue, oldValue) {
+    this.$$('.pageTitle').innerHTML = newValue;
+    this.$$('paper-drawer-panel').closeDrawer();
   },
 
-  getMenuItems(options) {
-    return Object.keys(options);
+  computeLink(route) {
+    return "#".concat(route);
   }
 });
 
