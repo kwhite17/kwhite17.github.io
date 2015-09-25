@@ -1,11 +1,14 @@
-NavBar = Polymer({
-  is: "nav-bar",
+PaperScaffold = Polymer({
+  is: "paper-scaffold",
 
   properties: {
     navOptions: {
       type: Object,
-      value: function() { return ["Home", "Projects", "Travel",
-       "Passions", "Blogs"];}
+      value: function() {
+        return ["Home", "Projects", "Travel",
+          "Passions", "Blogs"
+        ];
+      }
     },
 
     route: {
@@ -28,4 +31,4 @@ NavBar = Polymer({
   }
 });
 
-new NavBar();
+new PaperScaffold();

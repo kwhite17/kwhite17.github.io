@@ -1,52 +1,53 @@
 <dom-module id="card-element">
 
-  <link rel="import" href="../../lib/polymer/polymer.html">
-  <link rel="import" href="../../lib/paper-material/paper-material.html">
-
-
-
   <template>
 
-  <style>
-  .rootElement {
-    background-color: #FFFFFF;
-    min-height: 200px;
-    max-width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .titleSection {
-    font-size: xx-large;
-    margin-left: 2%;
-  }
+    <style>
+      .rootElement {
+        background-color: #FFFFFF;
+        min-height: 200px;
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-  .textSection {
-    font-size: large;
-    word-wrap: break-word;
-    margin-left: 2%;
-    margin-right: 2%;
-  }
+      .titleSection {
+        font-size: xx-large;
+        margin-left: 2%;
+      }
 
-  </style>
+      .textSection {
+        font-size: large;
+        word-wrap: break-word;
+        margin-left: 2%;
+        margin-right: 2%;
+      }
+    </style>
 
-  <paper-material class="rootElement" elevation="4">
-    <div class="imageSection">
-      <content select="img"></content>
-    </div>
-    <br/>
-    <div class="titleSection">
-      <content select="span"></content>
-    </div>
-    <br/>
-    <div class="textSection">
-      <content select="p"></content>
-    </div>
-    <br/>
-    <div class="buttonSection">
-      <content select="paper-button"></content>
-    </div>
-  </paper-material>
-</template>
+    <paper-material class="rootElement" elevation="4">
+      <div class="imageSection">
+        <content select="img"></content>
+      </div>
+      <br/>
+      <div class="titleSection">
+        <content select="span"></content>
+      </div>
+      <br/>
+      <div class="textSection">
+        <content select="p"></content>
+      </div>
+      <br/>
+      <div class="buttonSection">
+        <content select="link-button"></content>
+      </div>
+    </paper-material>
+  </template>
 
-<script src="./card-element.js"></script>
+  <script>
+    (function() {
+      Polymer({
+        is: "card-element",
+      });
+    })();
+  </script>
 </dom-module>

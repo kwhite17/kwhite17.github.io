@@ -1,29 +1,27 @@
 <dom-module id="passions-element">
-  <link rel="import" href="../../lib/polymer/polymer.html">
-  <link rel="import" href="../../lib/paper-button/paper-button.html">
-  <link rel="import" href="../card/card-element.html">
   <template>
     <card-element>
       <span>InterVarsity</span>
-      <img src="/images/acf.jpg" alt="Family" width="100%"/>
-      <p>InterVarsity is a Christian ministry that focuses on developing students
-      and faculty in the Christian faith. My time in college with InterVarsity
-      really helped guide me in the pursuit of growing my faith and being
-      a servant of the Lord.</p>
-      <paper-button name="iv" on-click="navigate">Home Page</paper-button>
-      <paper-button name="iv" on-click="navigate">Donate</paper-button>
+      <img src="/images/acf.jpg" alt="Family" width="100%" />
+      <p>InterVarsity is a Christian ministry that focuses on developing students and faculty in the Christian faith. My time in college with InterVarsity really helped guide me in the pursuit of growing my faith and being a servant of the Lord.</p>
+      <link-button url="http://www.intervarsity.org/" button-text="Home Page"></link-button>
+      <link-button url="https://donate.intervarsity.org/donate" button-text="Donate"></link-button>
     </card-element>
     <card-element>
       <span>323</span>
-      <img src="/images/323.jpeg" alt="Kiddos!" width="100%"/>
-      <p>323 is a Christian community outreach organization based out of
-      Highland Park, Michigan that provides a space for kids K-12 to hang out,
-      eat pizza, and hear God's Word once a week. It's been an incredible experience
-      hanging out with kids and watching the grow as the hear lessons from the Bible.</p>
-      <paper-button name="323" on-click="navigate">Home Page</paper-button>
-      <paper-button name="323" on-click="navigate">Donate</paper-button>
+      <img src="/images/323.jpeg" alt="Kiddos!" width="100%" />
+      <p>323 is a Christian community outreach organization based out of Highland Park, Michigan that provides a space for kids K-12 to hang out, eat pizza, and hear God's Word once a week. It's been an incredible experience hanging out with kids and watching
+        the grow as the hear lessons from the Bible.</p>
+      <link-button url="http://323fortheking.wix.com/323fortheking" button-text="Home Page"></link-button>
+      <link-button url="http://323fortheking.wix.com/323fortheking#!give/c125g" button-text="Donate"></link-button>
     </card-element>
   </template>
 
-  <script src="passions-element.js"></script>
+  <script>
+    (function() {
+      Polymer({
+        is: "passions-element",
+      });
+    })();
+  </script>
 </dom-module>

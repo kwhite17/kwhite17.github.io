@@ -1,0 +1,33 @@
+<dom-module id="link-button">
+  <style>
+    :host {
+      display: inline-block;
+    }
+
+    a {
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: #000000;
+    }
+  </style>
+  <template>
+    <paper-button>
+      <a href$="{{url}}" target="_blank">
+        <span>{{buttonText}}</span>
+      </a>
+    </paper-button>
+  </template>
+
+  <script>
+    (function() {
+      Polymer({
+        is: "link-button",
+        properties: {
+          url: String,
+          buttonText: String
+        }
+      });
+    })();
+  </script>
+</dom-module>

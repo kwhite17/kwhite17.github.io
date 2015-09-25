@@ -1,17 +1,18 @@
 <dom-module id="blogs-element">
-  <link rel="import" href="../../lib/polymer/polymer.html">
-  <link rel="import" href="../../lib/paper-button/paper-button.html">
-  <link rel="import" href="../card/card-element.html">
   <template>
     <card-element>
       <span>Countersteer</span>
-      <img src="/images/nola.jpg" alt="Blog Photo" width="100%"/>
-      <p>Countersteer is currently the name of my personal blog. I discuss
-      everything from politics to Christian living. My personal life, just
-      like my writing (hopefully), is a journey in self-improvement.</p>
-      <paper-button class="homeButton" on-click="navigate">Home Page</paper-button>
+      <img src="/images/nola.jpg" alt="Blog Photo" width="100%" />
+      <p>Countersteer is currently the name of my personal blog. I discuss everything from politics to Christian living. My personal life, just like my writing (hopefully), is a journey in self-improvement.</p>
+      <link-button url="http://katanakdubs.tumblr.com" button-text="Home Page"></link-button>
     </card-element>
   </template>
 
-  <script src="blogs-element.js"></script>
+  <script>
+    (function() {
+      Polymer({
+        is: "blogs-element",
+      });
+    })();
+  </script>
 </dom-module>
