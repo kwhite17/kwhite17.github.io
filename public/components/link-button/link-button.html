@@ -12,7 +12,7 @@
     }
   </style>
   <template>
-    <a href$="{{url}}" target="_blank">
+    <a href$="{{url}}" target$="{{target}}">
       <paper-button>
         <span>{{buttonText}}</span>
       </paper-button>
@@ -25,7 +25,11 @@
         is: "link-button",
         properties: {
           url: String,
-          buttonText: String
+          buttonText: String,
+          target: {
+            type: String,
+            value: "_blank"
+          }
         }
       });
     })();
