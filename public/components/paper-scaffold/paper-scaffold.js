@@ -21,12 +21,12 @@ PaperScaffold = Polymer({
     this.route = this.route ? this.route : "Home";
   },
 
-  _routeChanged(newValue, oldValue) {
+  _routeChanged: function(newValue, oldValue) {
     this.$$('.pageTitle').innerHTML = newValue;
     this.$$('paper-drawer-panel').closeDrawer();
   },
 
-  computeLink(route) {
+  computeLink: function(route) {
     return "#".concat(route);
   }
 });
