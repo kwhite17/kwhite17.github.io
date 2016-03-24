@@ -1,0 +1,96 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-icons/av-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-animation.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+
+<dom-module id="blogs-page">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      :host paper-card {
+        --paper-card-header-color: white;
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .preview /deep/ paper-card {
+        max-width: 350px;
+      }
+
+      :host a:visited {
+        color: inherit;
+        text-decoration: none;
+      }
+    </style>
+    <neon-animated-pages selected="0" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
+      <neon-animatable class="preview">
+        <paper-card heading="Countersteer" image="/images/nola.jpg">
+          <div class="card-actions">
+            <paper-icon-button id="countersteer" icon="fullscreen" on-tap="_loadDescription"></paper-icon-button>
+            <a href="http://katanakdubs.tumblr.com/" tabindex="-1" target="_blank">
+              <paper-icon-button icon="av:library-books"></paper-icon-button>
+            </a>
+          </div>
+        </paper-card>
+      </neon-animatable>
+      <neon-animatable>
+        <paper-card heading="Countersteer" image="/images/nola.jpg">
+          <div class="card-content">
+            <p>Countersteer is currently the name of my personal blog. I discuss everything from politics to Christian living. My personal life, just like my writing (hopefully), is a journey in self-improvement.</p>
+          </div>
+          <div class="card-actions">
+            <paper-icon-button icon="fullscreen-exit" on-tap="_returnToMain"></paper-icon-button>
+            <a href="http://katanakdubs.tumblr.com/" tabindex="-1" target="_blank">
+              <paper-icon-button icon="av:library-books"></paper-icon-button>
+            </a>
+          </div>
+        </paper-card>
+      </neon-animatable>
+    </neon-animated-pages>
+  </template>
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'blogs-page',
+
+        properties: {
+          descriptions: {
+            type: Object,
+            value: function() {
+              return {
+                'countersteer': 1
+              };
+            }
+          }
+        },
+
+        _loadDescription: function(e) {
+          var element = Polymer.dom(e).localTarget;
+          this.$$('neon-animated-pages').selected = this.descriptions[element.id];
+        },
+
+        _returnToMain: function() {
+          this.$$('neon-animated-pages').selected = 0;
+        }
+      });
+    })();
+  </script>
+</dom-module>
