@@ -14,6 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/neon-animation/neon-animation.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../expandable-paper-card/expandable-paper-card.html">
 
 <dom-module id="blogs-page">
   <template>
@@ -22,74 +23,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
 
-      :host paper-card {
+      :host .white-heading {
         --paper-card-header-color: white;
-        max-width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .preview /deep/ paper-card {
-        max-width: 350px;
-      }
-
-      :host a:visited {
-        color: inherit;
-        text-decoration: none;
       }
     </style>
-    <neon-animated-pages selected="0" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
-      <neon-animatable class="preview">
-        <paper-card heading="Countersteer" image="/images/nola.jpg">
-          <div class="card-actions">
-            <paper-icon-button id="countersteer" icon="fullscreen" on-tap="_loadDescription"></paper-icon-button>
-            <a href="http://katanakdubs.tumblr.com/" tabindex="-1" target="_blank">
-              <paper-icon-button icon="av:library-books"></paper-icon-button>
-            </a>
-          </div>
-        </paper-card>
-      </neon-animatable>
-      <neon-animatable>
-        <paper-card heading="Countersteer" image="/images/nola.jpg">
-          <div class="card-content">
-            <p>Countersteer is currently the name of my personal blog. I discuss everything from politics to Christian living. My personal life, just like my writing (hopefully), is a journey in self-improvement.</p>
-          </div>
-          <div class="card-actions">
-            <paper-icon-button icon="fullscreen-exit" on-tap="_returnToMain"></paper-icon-button>
-            <a href="http://katanakdubs.tumblr.com/" tabindex="-1" target="_blank">
-              <paper-icon-button icon="av:library-books"></paper-icon-button>
-            </a>
-          </div>
-        </paper-card>
-      </neon-animatable>
-    </neon-animated-pages>
+    <expandable-paper-card class="white-heading" heading="Countersteer" image-url="/images/nola.jpg" icon-links='[{"url": "http://katanakdubs.tumblr.com/", "icon": "av:library-books"}]'>
+      <div class="description">
+        <p>Countersteer is currently the name of my personal blog. I discuss everything from politics to Christian living. My personal life, just like my writing (hopefully), is a journey in self-improvement.</p>
+      </div>
+    </expandable-paper-card>
   </template>
   <script>
     (function() {
       'use strict';
 
       Polymer({
-        is: 'blogs-page',
-
-        properties: {
-          descriptions: {
-            type: Object,
-            value: function() {
-              return {
-                'countersteer': 1
-              };
-            }
-          }
-        },
-
-        _loadDescription: function(e) {
-          var element = Polymer.dom(e).localTarget;
-          this.$$('neon-animated-pages').selected = this.descriptions[element.id];
-        },
-
-        _returnToMain: function() {
-          this.$$('neon-animated-pages').selected = 0;
-        }
+        is: 'blogs-page'
       });
     })();
   </script>

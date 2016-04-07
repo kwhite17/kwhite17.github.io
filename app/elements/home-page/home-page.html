@@ -13,6 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/neon-animation/neon-animation.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../expandable-paper-card/expandable-paper-card.html">
 
 <dom-module id="home-page">
   <template>
@@ -21,72 +22,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
 
-      :host paper-card {
-        --paper-card-header-color: white;
-        max-width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .preview /deep/ paper-card {
-        max-width: 350px;
-      }
-
-      :host a:visited {
-        color: inherit;
-        text-decoration: none;
+      :host .white-heading {
+        --paper-card-header-color: red;
       }
     </style>
-    <neon-animated-pages selected="0" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
-      <neon-animatable class="preview">
-        <paper-card image="/images/seniorBall.jpg">
-          <div class="card-content">
-            <p>What up villains... uhh I mean hi, I'm Kevin White and welcome to my website! Here you'll find some information about my life: software projects, blogs, travels, and passions. I hope you enjoy!</p>
-          </div>
-          <div class="card-actions">
-            <paper-icon-button id="home" icon="fullscreen" on-tap="_loadDescription"></paper-icon-button>
-          </div>
-        </paper-card>
-      </neon-animatable>
-      <neon-animatable>
-        <paper-card heading="About Me" image="/images/thevictors.jpg">
-          <div class="card-content">
-            <p>Resident quirky nerd at your service! Hailing from Detroit, MI, I'm currently working as a software developer at General Motors for the OnStar platform. I had the blessing of spending four fantastic years in the Boston area attending MIT. In my
-              free time, I enjoy watching and playing sports, watching anime, coding, and spending some time in the Bible. My musical tastes primarily center around hip hop, R&amp;B, metal, and progressive rock.</p>
-          </div>
-          <div class="card-actions">
-            <paper-icon-button icon="fullscreen-exit" on-tap="_returnToMain"></paper-icon-button>
-          </div>
-        </paper-card>
-      </neon-animatable>
-    </neon-animated-pages>
+    <expandable-paper-card class="white-heading" heading="About Me" image-url="/images/seniorBall.jpg">
+      <div class="intro-content card-content">
+        <p>What up villains... uhh I mean hi, I'm Kevin White and welcome to my website! Here you'll find some information about my life: software projects, blogs, travels, and passions. I hope you enjoy!</p>
+      </div>
+      <div class="description">
+        <p>Resident quirky nerd at your service! Hailing from Detroit, MI, I'm currently working as a software developer at General Motors for the OnStar platform. I had the blessing of spending four fantastic years in the Boston area attending MIT. In my
+          free time, I enjoy watching and playing sports, watching anime, coding, and spending some time in the Bible. My musical tastes primarily center around hip hop, R&amp;B, metal, and progressive rock.</p>
+      </div>
+    </expandable-paper-card>
   </template>
   <script>
     (function() {
       'use strict';
 
       Polymer({
-        is: 'home-page',
-
-        properties: {
-          descriptions: {
-            type: Object,
-            value: function() {
-              return {
-                'home': 1
-              };
-            }
-          }
-        },
-
-        _loadDescription: function(e) {
-          var element = Polymer.dom(e).localTarget;
-          this.$$('neon-animated-pages').selected = this.descriptions[element.id];
-        },
-
-        _returnToMain: function() {
-          this.$$('neon-animated-pages').selected = 0;
-        }
+        is: 'home-page'
       });
     })();
   </script>

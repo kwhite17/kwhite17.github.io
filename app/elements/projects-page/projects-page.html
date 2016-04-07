@@ -13,6 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/neon-animation/neon-animation.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../expandable-paper-card/expandable-paper-card.html">
 
 <dom-module id="projects-page">
   <template>
@@ -20,80 +21,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
       }
-
-      :host paper-card {
-        max-width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .preview /deep/ paper-card {
-        max-width: 350px;
-      }
-
-      :host a:visited {
-        color: inherit;
-        text-decoration: none;
-      }
     </style>
-    <neon-animated-pages selected="0" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
-      <neon-animatable class="preview">
-        <paper-card image="/images/nudgeFeatureGraphic.png">
-          <div class="card-actions">
-            <paper-icon-button id="nudge" icon="fullscreen" on-tap="_loadDescription"></paper-icon-button>
-            <a href="https://play.google.com/store/apps/details?id=com.ksp.nudge" tabindex="-1" target="_blank">
-              <paper-icon-button icon="cloud-upload"></paper-icon-button>
-            </a>
-            <a href="https://github.com/kwhite17/Nudge" tabindex="-1" target="_blank">
-              <paper-icon-button icon="code"></paper-icon-button>
-            </a>
-          </div>
-        </paper-card>
-      </neon-animatable>
-      <neon-animatable>
-        <paper-card image="/images/nudgeFeatureGraphic.png">
-          <div class="card-content">
-            <p> Nudge is an automated text messaging application useful for functions such as reminders, accountability texts, and PSAs.</p>
-          </div>
-          <div class="card-actions">
-            <paper-icon-button icon="fullscreen-exit" on-tap="_returnToMain"></paper-icon-button>
-            <a href="https://play.google.com/store/apps/details?id=com.ksp.nudge" tabindex="-1" target="_blank">
-              <paper-icon-button icon="shop-two"></paper-icon-button>
-            </a>
-            <a href="https://github.com/kwhite17/Nudge" tabindex="-1" target="_blank">
-              <paper-icon-button icon="code"></paper-icon-button>
-            </a>
-          </div>
-        </paper-card>
-      </neon-animatable>
-    </neon-animated-pages>
+    <expandable-paper-card image-url="/images/nudgeFeatureGraphic.png" icon-links='[{"url": "https://play.google.com/store/apps/details?id=com.ksp.nudge", "icon": "cloud-upload"},
+     {"url": "https://github.com/kwhite17/Nudge", "icon": "code"}]'>
+      <div class="description">
+        <p> Nudge is an automated text messaging application useful for functions such as reminders, accountability texts, and PSAs.</p>
+      </div>
+    </expandable-paper-card>
   </template>
   <script>
     (function() {
       'use strict';
 
       Polymer({
-        is: 'projects-page',
-
-        properties: {
-          descriptions: {
-            type: Object,
-            value: function() {
-              return {
-                'nudge': 1
-              };
-            }
-          }
-        },
-
-        _loadDescription: function(e) {
-          var element = Polymer.dom(e).localTarget;
-          this.$$('neon-animated-pages').selected = this.descriptions[element.id];
-        },
-
-        _returnToMain: function() {
-          this.$$('neon-animated-pages').selected = 0;
-        }
+        is: 'projects-page'
       });
     })();
   </script>
