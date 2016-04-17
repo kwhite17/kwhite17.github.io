@@ -10,35 +10,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-icons/av-icons.html">
-<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="../../bower_components/neon-animation/neon-animation.html">
-<link rel="import" href="../../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../expandable-paper-card/expandable-paper-card.html">
+<link rel="import" href="../page-behavior/page-behavior.html">
+<link rel="import" href="../page-style/page-style.html">
 
 <dom-module id="blogs-page">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-
-      :host .white-heading {
-        --paper-card-header-color: white;
-      }
-    </style>
-    <expandable-paper-card class="white-heading" heading="Countersteer" image-url="/images/nola.jpg" icon-links='[{"url": "http://katanakdubs.tumblr.com/", "icon": "av:library-books"}]'>
-      <div class="description">
-        <p>Countersteer is currently the name of my personal blog. I discuss everything from politics to Christian living. My personal life, just like my writing (hopefully), is a journey in self-improvement.</p>
-      </div>
-    </expandable-paper-card>
+    <style include="page-style"></style>
+    <div class="container">
+      <expandable-paper-card class="white-heading" heading="Countersteer" image-url="/images/nola.jpg" icon-links='[{"url": "http://katanakdubs.tumblr.com/", "icon": "av:library-books"}]'>
+        <div class="description">
+          <p>Countersteer is currently the name of my personal blog. I discuss everything from politics to Christian living. My personal life, just like my writing (hopefully), is a journey in self-improvement.</p>
+        </div>
+      </expandable-paper-card>
+    </div>
   </template>
   <script>
     (function() {
       'use strict';
 
       Polymer({
-        is: 'blogs-page'
+        is: 'blogs-page',
+        behaviors: [PageBehavior]
       });
     })();
   </script>

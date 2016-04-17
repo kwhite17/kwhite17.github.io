@@ -9,39 +9,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="../../bower_components/neon-animation/neon-animation.html">
-<link rel="import" href="../../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../expandable-paper-card/expandable-paper-card.html">
+<link rel="import" href="../page-behavior/page-behavior.html">
+<link rel="import" href="../page-style/page-style.html">
 
 <dom-module id="home-page">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-
-      :host .white-heading {
-        --paper-card-header-color: red;
-      }
-    </style>
-    <expandable-paper-card class="white-heading" heading="About Me" image-url="/images/seniorBall.jpg">
-      <div class="intro-content card-content">
-        <p>What up villains... uhh I mean hi, I'm Kevin White and welcome to my website! Here you'll find some information about my life: software projects, blogs, travels, and passions. I hope you enjoy!</p>
-      </div>
-      <div class="description">
-        <p>Resident quirky nerd at your service! Hailing from Detroit, MI, I'm currently working as a software developer at General Motors for the OnStar platform. I had the blessing of spending four fantastic years in the Boston area attending MIT. In my
-          free time, I enjoy watching and playing sports, watching anime, coding, and spending some time in the Bible. My musical tastes primarily center around hip hop, R&amp;B, metal, and progressive rock.</p>
-      </div>
-    </expandable-paper-card>
+    <style include="page-style"></style>
+    <div class="container">
+      <expandable-paper-card class="white-heading" heading="About Me" image-url="/images/seniorBall.jpg">
+        <div class="intro-content card-content">
+          <p>What up villains... uhh I mean hi, I'm Kevin White and welcome to my website! Here you'll find some information about my life: software projects, blogs, travels, and passions. I hope you enjoy!</p>
+        </div>
+        <div class="description">
+          <p>Resident quirky nerd at your service! Hailing from Detroit, MI, I'm currently working as a software developer at General Motors for the OnStar platform. I had the blessing of spending four fantastic years in the Boston area attending MIT. In
+            my free time, I enjoy watching and playing sports, watching anime, coding, and spending some time in the Bible. My musical tastes primarily center around hip hop, R&amp;B, metal, and progressive rock.</p>
+        </div>
+      </expandable-paper-card>
+    </div>
   </template>
   <script>
     (function() {
       'use strict';
 
       Polymer({
-        is: 'home-page'
+        is: 'home-page',
+        behaviors: [PageBehavior]
       });
     })();
   </script>

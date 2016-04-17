@@ -9,116 +9,67 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../bower_components/iron-icons/image-icons.html">
-<link rel="import" href="../../bower_components/neon-animation/neon-animation.html">
-<link rel="import" href="../../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../expandable-paper-card/expandable-paper-card.html">
+<link rel="import" href="../page-behavior/page-behavior.html">
+<link rel="import" href="../page-style/page-style.html">
 
 <dom-module id="travel-page">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-
-      :host .white-heading {
-        --paper-card-header-color: white;
-      }
-    </style>
-    <expandable-paper-card class="white-heading"
-    heading="Hawaii (2015)"
-    image-url="/images/hawaii_selfie.JPG"
-    icon-links='[{"url": "https://goo.gl/photos/MoRSn2sHg2KCJrNr7", "icon": "image:collections"}]'>
-      <div class="description">
-        <p>	There’s definitely a lot of hype surrounding a Hawaii. So when my friend Joanna, a naval officer, says
-            she’s stationed in Hawaii for six months, it was time to see if the hype was real. I was blessed to go
-            on one of my favorite trips; even more so to share these memories with a close friend. I spent time
-            visiting the Iolani Palace, Hanauma Bay, and Hawaii’s beautiful beaches. While these places and the
-            obscene amount of food were definitely enjoyable parts of the trip, there were three experiences that
-            stand out as my favorites from my Hawaiian vacation.</p>
-        <p> On my second full day at 6:30 am, Joanna and I headed out to the World War II Valor in the Pacific
-            National Monument. The monument is one of the most solemn places I’ve ever visited but I think it was
-            very important to understand the sacrifice American troops made to protect our freedom and sovereignty.
-            After spending time ashore, we were taken to the USS Arizona, one of the battleships destroyed during
-            the attack on Pearl Harbor. After visiting the sunken battleship, we then headed to the actual Pearl
-            Harbor Naval Base so I could tour my friend’s ship, a freaking destroyer!!! An active destroyer!!! I’m
-            not trying to get people fired talking about my travels. So even though everything as far as I know was
-            above board and sanitized (which means all the classified stuff was secured out of the eyesight of your
-            common civilian), I’m not going to go into much detail here! Sorry!</p>
-        <p>	I also had the opportunity to visit the Polynesian Cultural Center. Here you have the opportunity to
-            learn more about the cultures of the Polynesian Islands, which include Hawaii. What makes the center
-            particularly unique is that all the exhibits are live. Joanna and I spent a lot of time visiting the
-            various live exhibits, see demonstrations, and learning more about these Pacific Islands. They even had
-            a canoe pageant on the river running through the center where contestants from the different islands
-            would show off the traditional dance moves and music of their culture. After that, there was a luau
-            with mouthwatering food and great performances followed by a live musical called “The Breath of Life.”
-            Overall day two was a day filled with entertainment and was definitely the most fun day of the trip.
-        </p>
-        <p> The final highlight of the trip was the second hike. While I’m not totally sure where we were
-            (I believe the neighborhood was called E Komo Mai), I could tell as we approached the hiking trail
-            that I was in for a treat. We initially took the “wrong” route, which led to an incredible view of the
-            mountain summit. Sight after sight on the way to the top demonstrated the all-natural beauty of this
-            Hawaiian mountain range. Even in the sporadic rainfall, I was definitely remained in awe of the
-            forested mountains, which were only disturbed by those on foot. It was an unbelievable sight where I
-            really got to see the unadulterated majesty of God’s creation. After backtracking, we finally found the
-            right path that ultimately led to a waterfall within the mountain range. Spending time playing at the
-            base of the waterfall after a successful, adventure-filled hike will stay with me as an enduring memory
-            from an unforgettable trip.</p>
-      </div>
-    </expandable-paper-card>
-    <expandable-paper-card class="white-heading"
-    heading="Japan (2014)"
-    image-url="/images/yoyogi.jpg"
-    icon-links='[{"url": "https://goo.gl/photos/gsVTNuoH89iGHKdG8", "icon": "image:collections"}]'>
-      <div class="description">
-        <p> As a graduation present to myself, I decided to take a trip to Japan for two weeks. It was an absolutely
-          amazing trip. I primarily spent time in Tokyo and Kyoto. However, I did spend a day in Nara to visit the
-          Todaiji Temple (and two others whose names I forgot).</p>
-        <p> Kyoto was amazing. I think in my limited travel experiences it is safe to say that I've never been to a
-          city quite like Kyoto. The blend of temples, shrines, and modern buildings created an experience that I
-          believe I'll be extremely challenged to find for a long time. One of my favorite discoveries was the Maimai
-          Cafe. It was a struggle remebering how to speak Japanese at an all-Japanese cafe, but because of my
-          perseverance, I learned about this delicious Japanese dish called sukiyaki. The customer barbecues raw beef
-          in a marinade with noodles and vegetables for a delicious stew-like experience. You can also dip your food in
-          raw egg for additional flavor.</p>
-        <p>Tokyo was also fantastic. It is unfathomable to think about how modern that prefecture looks in comparison
-          to the other places I've visited, including a thriving Boston. Some of the highlights there were visiting the
-          onsen and visiting Tokyo proper. Tokyo proper contains the imperial palace and the Diet building which are
-          encompassed in some of the shiniest skyscrapers I've seen in my life. It was so breathtaking. There's so much
-          more of Japan I could talk about including the chaos at the Hachijo Crossing (this name could be wrong) at
-          Shibuya, anime nirvana at Akihabara, and the bullet train experience, but you should just ask me if you know
-          me.</p>
-        <p>One final point, please stop by Cafe Byron Bay. This is my favorite bar in Japan. It's a cafe where local
-          patrons come to speak English with tourists or foreigners, giving you a great opportunity to learn a lot
-          about Japanese culture from the people who live there. The bartender/owner is really amazing and has really
-          created an awesome experience.</p>
-      </div>
-    </expandable-paper-card>
-    <expandable-paper-card class="white-heading"
-    heading="London &amp; Paris (2010)"
-    image-url="/images/versailles.jpg"
-    icon-links='[{"url": "https://www.facebook.com/media/set/?set=a.1922525863718.2118876.1259235021&type=1&l=c44fa05643", "icon": "image:collections"}]'>
-      <div class="description">
-        <p>I went to England and Paris over ten days with my mom, my best friend, and his relatives. It was a really
-          cool experience that I wouldn't trade for anything. In England, we had the opportunity to visit cool places
-          such as Stonehenge, the Roman Baths, Buckingham Palace, and Westminster Abbey. This was a cool experience
-          despite having to temporarily evacuate the hotel after arriving due to a bomb threat (!!!).</p>
-        <p>In Paris, we got to visit historical sites such as the Louvre, the Eiffel Tower, and the Notre Dame
-          Cathedral. In addition, we had the opportunity to visit the Palace at Versailles, which is by far the most
-          beautiful building I have seen to this day. It is absolutely incredible. Our tour of the palace had us visit
-          twenty rooms, or one percent of the entire palace, not including the gardens. As my friend said after an half
-          hour of touring "No wonder the French rebelled."</p>
-      </div>
-    </expandable-paper-card>
+    <style include="page-style"></style>
+    <div class="container">
+      <expandable-paper-card class="white-heading" heading="Hawaii (2015)" image-url="/images/hawaii_selfie.JPG" icon-links='[{"url": "https://goo.gl/photos/MoRSn2sHg2KCJrNr7", "icon": "image:collections"}]'>
+        <div class="description">
+          <p> There’s definitely a lot of hype surrounding a Hawaii. So when my friend Joanna, a naval officer, says she’s stationed in Hawaii for six months, it was time to see if the hype was real. I was blessed to go on one of my favorite trips; even more
+            so to share these memories with a close friend. I spent time visiting the Iolani Palace, Hanauma Bay, and Hawaii’s beautiful beaches. While these places and the obscene amount of food were definitely enjoyable parts of the trip, there were
+            three experiences that stand out as my favorites from my Hawaiian vacation.</p>
+          <p> On my second full day at 6:30 am, Joanna and I headed out to the World War II Valor in the Pacific National Monument. The monument is one of the most solemn places I’ve ever visited but I think it was very important to understand the sacrifice
+            American troops made to protect our freedom and sovereignty. After spending time ashore, we were taken to the USS Arizona, one of the battleships destroyed during the attack on Pearl Harbor. After visiting the sunken battleship, we then headed
+            to the actual Pearl Harbor Naval Base so I could tour my friend’s ship, a freaking destroyer!!! An active destroyer!!! I’m not trying to get people fired talking about my travels. So even though everything as far as I know was above board
+            and sanitized (which means all the classified stuff was secured out of the eyesight of your common civilian), I’m not going to go into much detail here! Sorry!</p>
+          <p> I also had the opportunity to visit the Polynesian Cultural Center. Here you have the opportunity to learn more about the cultures of the Polynesian Islands, which include Hawaii. What makes the center particularly unique is that all the exhibits
+            are live. Joanna and I spent a lot of time visiting the various live exhibits, see demonstrations, and learning more about these Pacific Islands. They even had a canoe pageant on the river running through the center where contestants from
+            the different islands would show off the traditional dance moves and music of their culture. After that, there was a luau with mouthwatering food and great performances followed by a live musical called “The Breath of Life.” Overall day two
+            was a day filled with entertainment and was definitely the most fun day of the trip.
+          </p>
+          <p> The final highlight of the trip was the second hike. While I’m not totally sure where we were (I believe the neighborhood was called E Komo Mai), I could tell as we approached the hiking trail that I was in for a treat. We initially took the
+            “wrong” route, which led to an incredible view of the mountain summit. Sight after sight on the way to the top demonstrated the all-natural beauty of this Hawaiian mountain range. Even in the sporadic rainfall, I was definitely remained in
+            awe of the forested mountains, which were only disturbed by those on foot. It was an unbelievable sight where I really got to see the unadulterated majesty of God’s creation. After backtracking, we finally found the right path that ultimately
+            led to a waterfall within the mountain range. Spending time playing at the base of the waterfall after a successful, adventure-filled hike will stay with me as an enduring memory from an unforgettable trip.</p>
+        </div>
+      </expandable-paper-card>
+      <expandable-paper-card class="white-heading" heading="Japan (2014)" image-url="/images/yoyogi.jpg" icon-links='[{"url": "https://goo.gl/photos/gsVTNuoH89iGHKdG8", "icon": "image:collections"}]'>
+        <div class="description">
+          <p> As a graduation present to myself, I decided to take a trip to Japan for two weeks. It was an absolutely amazing trip. I primarily spent time in Tokyo and Kyoto. However, I did spend a day in Nara to visit the Todaiji Temple (and two others
+            whose names I forgot).</p>
+          <p> Kyoto was amazing. I think in my limited travel experiences it is safe to say that I've never been to a city quite like Kyoto. The blend of temples, shrines, and modern buildings created an experience that I believe I'll be extremely challenged
+            to find for a long time. One of my favorite discoveries was the Maimai Cafe. It was a struggle remebering how to speak Japanese at an all-Japanese cafe, but because of my perseverance, I learned about this delicious Japanese dish called sukiyaki.
+            The customer barbecues raw beef in a marinade with noodles and vegetables for a delicious stew-like experience. You can also dip your food in raw egg for additional flavor.</p>
+          <p>Tokyo was also fantastic. It is unfathomable to think about how modern that prefecture looks in comparison to the other places I've visited, including a thriving Boston. Some of the highlights there were visiting the onsen and visiting Tokyo
+            proper. Tokyo proper contains the imperial palace and the Diet building which are encompassed in some of the shiniest skyscrapers I've seen in my life. It was so breathtaking. There's so much more of Japan I could talk about including the
+            chaos at the Hachijo Crossing (this name could be wrong) at Shibuya, anime nirvana at Akihabara, and the bullet train experience, but you should just ask me if you know me.
+          </p>
+          <p>One final point, please stop by Cafe Byron Bay. This is my favorite bar in Japan. It's a cafe where local patrons come to speak English with tourists or foreigners, giving you a great opportunity to learn a lot about Japanese culture from the
+            people who live there. The bartender/owner is really amazing and has really created an awesome experience.</p>
+        </div>
+      </expandable-paper-card>
+      <expandable-paper-card class="white-heading" heading="London &amp; Paris (2010)" image-url="/images/versailles.jpg" icon-links='[{"url": "https://www.facebook.com/media/set/?set=a.1922525863718.2118876.1259235021&type=1&l=c44fa05643", "icon": "image:collections"}]'>
+        <div class="description">
+          <p>I went to England and Paris over ten days with my mom, my best friend, and his relatives. It was a really cool experience that I wouldn't trade for anything. In England, we had the opportunity to visit cool places such as Stonehenge, the Roman
+            Baths, Buckingham Palace, and Westminster Abbey. This was a cool experience despite having to temporarily evacuate the hotel after arriving due to a bomb threat (!!!).</p>
+          <p>In Paris, we got to visit historical sites such as the Louvre, the Eiffel Tower, and the Notre Dame Cathedral. In addition, we had the opportunity to visit the Palace at Versailles, which is by far the most beautiful building I have seen to
+            this day. It is absolutely incredible. Our tour of the palace had us visit twenty rooms, or one percent of the entire palace, not including the gardens. As my friend said after an half hour of touring "No wonder the French rebelled."</p>
+        </div>
+      </expandable-paper-card>
+    </div>
   </template>
   <script>
     (function() {
       'use strict';
 
       Polymer({
-        is: 'travel-page'
+        is: 'travel-page',
+        behaviors: [PageBehavior]
       });
     })();
   </script>

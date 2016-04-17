@@ -19,25 +19,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
 
 <dom-module id="paper-scaffold">
-
   <style is="custom-style">
-    .pageTitle {
-      font-size: 150%;
+    :host {
+      height: inherit;
     }
 
-    .navLink {
-      padding-bottom: 5%;
-      font-size: 110%;
+    :host .navLink {
       background-color: #455A64;
       color: white;
       cursor: pointer;
     }
 
-    #siteTitle {
-      font-size: 130%;
-    }
-
-    paper-drawer-panel {
+    :host paper-drawer-panel {
       --paper-drawer-panel-main-container: {
         background-color: #B0BEC5;
       }
@@ -46,10 +39,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background-color: #455A64;
       }
       ;
-    }
-
-    ::content card-element {
-      padding: 5%;
     }
 
     :host paper-menu {
@@ -66,7 +55,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <paper-header-panel drawer>
         <paper-toolbar>
           <div>
-            <paper-item id="siteTitle">Kevin White</paper-item>
+            <span class="title">Kevin White</span>
           </div>
         </paper-toolbar>
         <paper-menu attr-for-selected="title" selected="{{currentPage}}">
@@ -79,7 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-toolbar>
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
           <div>
-            <span class="pageTitle">{{currentPage}}</span>
+            <span class="title">{{currentPage}}</span>
           </div>
         </paper-toolbar>
         <iron-pages id="pages" attr-for-selected="name">
@@ -101,7 +90,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         pages: {
           type: Array,
-          value: function() { return []; }
+          value: function() {
+            return [];
+          }
         },
 
         currentPage: {
@@ -114,6 +105,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       attached: function() {
         this._buildPageMenu();
         this.currentPage = this.pages[0];
+        window.addEventListener("resize", this._updateIronPageSize);
+        this._updateIronPageSize();
       },
 
       _onCurrentPageChanged: function(newValue) {
@@ -125,9 +118,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var elements = this.querySelectorAll('.page');
         var i;
 
-        for (i = 0; i<elements.length; i++) {
+        for (i = 0; i < elements.length; i++) {
           this.push('pages', elements[i].getAttribute('name'));
         }
+      },
+
+      _updateIronPageSize: function() {
+        var pages = document.querySelector('iron-pages');
+
+        pages.style.height = pages.parentElement.clientHeight + "px";
       }
     });
   })();
