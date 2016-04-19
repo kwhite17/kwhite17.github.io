@@ -31,30 +31,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
     <neon-animated-pages selected="0" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
-        <paper-card heading="[[heading]]" image="[[imageUrl]]" class="preview">
-          <content select=".intro-content"></content>
-          <div class="card-actions">
-            <paper-icon-button icon="fullscreen" on-tap="_loadDescription"></paper-icon-button>
-            <template is="dom-repeat" items="[[iconLinks]]" as="link">
-              <a href$="[[link.url]]" tabindex="-1" target="_blank">
-                <paper-icon-button icon$="[[link.icon]]"></paper-icon-button>
-              </a>
-            </template>
-          </div>
-        </paper-card>
-        <paper-card heading="[[heading]]" image="[[imageUrl]]">
-          <div class="card-content">
-            <content select=".description"></content>
-          </div>
-          <div class="card-actions">
-            <paper-icon-button icon="fullscreen-exit" on-tap="_returnToMain"></paper-icon-button>
-            <template is="dom-repeat" items="[[iconLinks]]" as="link">
-              <a href$="[[link.url]]" tabindex="-1" target="_blank">
-                <paper-icon-button icon$="[[link.icon]]"></paper-icon-button>
-              </a>
-            </template>
-          </div>
-        </paper-card>
+      <paper-card heading="[[heading]]" image="[[imageUrl]]" class="preview">
+        <content select=".intro-content"></content>
+        <div class="card-actions">
+          <paper-icon-button icon="fullscreen" on-tap="_displayDescription"></paper-icon-button>
+          <template is="dom-repeat" items="[[iconLinks]]" as="link">
+            <a href$="[[link.url]]" tabindex="-1" target="_blank">
+              <paper-icon-button icon$="[[link.icon]]"></paper-icon-button>
+            </a>
+          </template>
+        </div>
+      </paper-card>
+      <paper-card heading="[[heading]]" image="[[imageUrl]]" class="expanded">
+        <div class="card-content">
+          <content select=".description"></content>
+        </div>
+        <div class="card-actions">
+          <paper-icon-button icon="fullscreen-exit" on-tap="_returnToPreview"></paper-icon-button>
+          <template is="dom-repeat" items="[[iconLinks]]" as="link">
+            <a href$="[[link.url]]" tabindex="-1" target="_blank">
+              <paper-icon-button icon$="[[link.icon]]"></paper-icon-button>
+            </a>
+          </template>
+        </div>
+      </paper-card>
     </neon-animated-pages>
   </template>
   <script>
@@ -75,14 +75,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           }
         },
 
-        _loadDescription: function(e) {
-          this.$$('neon-animated-pages').selected = 1;
+        listeners: {
+          'iron-select': '_onIronSelect'
+        },
+
+        _displayDescription: function(e) {
+          this.$$('neon-animated-pages').select(1);
           this.fire('description-displayed', this);
         },
 
-        _returnToMain: function() {
-          this.$$('neon-animated-pages').selected = 0;
+        _returnToPreview: function() {
+          this.$$('neon-animated-pages').select(0);
           this.fire('description-hidden');
+        },
+
+        _onIronSelect: function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
         }
       });
     })();
