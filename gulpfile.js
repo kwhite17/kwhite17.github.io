@@ -247,7 +247,7 @@ gulp.task('serve', ['styles', 'elements'], function() {
 // Build and serve the output from the dist build
 gulp.task('serve:dist', ['default'], function() {
   browserSync({
-    port: 5001,
+    port: process.env.PORT || 5001,
     notify: false,
     logPrefix: 'PSK',
     snippetOptions: {
