@@ -1,1 +1,0 @@
-!function(o){"use strict";var t=o.querySelector("#app");t.baseUrl="/",""===window.location.port}(document);
